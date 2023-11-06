@@ -6,7 +6,6 @@ const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
 
 var usersRouter = require('./routes/users')
-var pronRouter = require('./routes/pron')
 
 app.set('port', port)
 
@@ -25,7 +24,6 @@ async function start() {
   }
 
   app.use('/users', usersRouter)
-  app.use('/pron', pronRouter)
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
