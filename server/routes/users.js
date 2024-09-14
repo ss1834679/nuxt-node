@@ -1,9 +1,30 @@
-var express = require('express');
-var router = express.Router();
+// api/users.js
+const express = require('express')
+const router = express.Router()
+const mongoose = require('mongoose')
+const connectDB = require('../utils/mongoose')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send({"name": "张三", id: 1,age:12});
-});
+connectDB()
 
-module.exports = router;
+// 创建用户模型
+const UserSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String
+})
+const User = mongoose.model('User', UserSchema)
+
+// 获取所有用户
+router.get('/', async (req, res) => {
+  const users = await User.find()
+  res.json(users)
+})
+
+// 创建用户
+router.post('/', async (req, res) => {
+  const newUser = new User(req.body)
+  await newUser.save()
+  res.json(newUser)
+})
+
+module.exports = router
