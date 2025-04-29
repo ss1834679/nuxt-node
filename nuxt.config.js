@@ -49,6 +49,13 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    loaders: {
+      less: {
+        // 配置全局变量/混合（可选）
+      }
+    },
+    extend(config, ctx) {
+      const lessLoader = config.module.rules.find((rule) => rule.test.toString().includes('less'))
+    }
   }
 }
