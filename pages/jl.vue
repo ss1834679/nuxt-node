@@ -137,7 +137,7 @@ export default {
       project: [
         {
           name: '筋斗云项目',
-          time: '2021年08月 - 2024年08月',
+          time: '2021年08月 - 至今',
           posi: '前端开发',
           city: '重庆',
           jishu: '开发技术：VUE全家桶+element-ui+HTML5/CSS3+axios+less+nuxt+nodejs（管理端）、vantui（企业微信端）',
@@ -154,8 +154,8 @@ export default {
           time: '2024年08月 - 2025年01月',
           posi: '前端开发',
           city: '重庆',
-          jishu: '',
-          miaoshu: '',
+          jishu: 'VUE全家桶+element-ui+HTML5/CSS3+axios+less+nuxt+nodejs（管理端）',
+          miaoshu: 'rfid运行管理平台，负责rfid的日常管理，查询，运营',
           thing: [
             '负责需求评审、技术调研、开发、上线',
             '使用React Native进行前端的开发',
